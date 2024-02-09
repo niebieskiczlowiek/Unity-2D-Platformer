@@ -7,8 +7,9 @@ public class SlashBoxScript : MonoBehaviour
         Enemy enemy = collider.GetComponent<Enemy>();
         if (enemy != null)
         {
-            Vector2 slashDirection = new Vector2((collider.transform.position.x - slashBoxTransform.position.x) * 80f, 0f); 
-            enemy.TakeDamage(1, slashDirection);
+            Vector2 slashDirection = new Vector2((collider.transform.position.x - slashBoxTransform.position.x) * 80f, 0f);
+            Hit hitObject = new Hit(1, slashDirection);
+            enemy.HandleHit(hitObject);
         }
     }
 }

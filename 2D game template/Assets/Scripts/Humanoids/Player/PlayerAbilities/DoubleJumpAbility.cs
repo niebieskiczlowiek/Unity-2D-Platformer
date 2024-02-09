@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DoubleJumpAbility : MonoBehaviour
@@ -8,11 +6,6 @@ public class DoubleJumpAbility : MonoBehaviour
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private PlayerState playerStateManager;
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         DoubleJump();

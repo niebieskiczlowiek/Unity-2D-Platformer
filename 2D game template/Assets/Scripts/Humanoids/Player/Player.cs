@@ -5,7 +5,6 @@ public class Player : Humanoid {
     [SerializeField] private PlayerStats playerStatsManager;
     [SerializeField] private PlayerState playerStateManager;
     [SerializeField] private Transform playerTransform;
-    [SerializeField] private Rigidbody2D playerRb;
 
     private float _invincibilityFramesTime = 1f;
     private float _lastTimeHit;
@@ -33,10 +32,10 @@ public class Player : Humanoid {
             Die();
         }
     }
-    protected override IEnumerator ApplyKnockBack(Rigidbody2D rb, Vector2 knockBackDirection)
+    protected override IEnumerator ApplyKnockBack(Vector2 knockBackDirection)
     {
         playerStateManager.isKnockBacked = true;
-        rb.AddForce(knockBackDirection * 80f, ForceMode2D.Impulse);
+        Rigidbody.AddForce(knockBackDirection * 80f, ForceMode2D.Impulse);
         yield return new WaitForSeconds(0.1f);
         playerStateManager.isKnockBacked = false;
     }
@@ -55,14 +54,18 @@ public class Player : Humanoid {
         CurrentHealth = MaxHealth;
     }
 
-    public override void TakeDamage(int damageTaken, Vector2 damageDirection)
+    protected override void TakeDamage(int damageTaken)
     {
         if (!(Time.time - _lastTimeHit > _invincibilityFramesTime))
         {
             return;
         }
         CurrentHealth -= damageTaken;
-        StartCoroutine(ApplyKnockBack(playerRb, damageDirection));
         _lastTimeHit = Time.time;
+    }
+
+    public void checkCollision()
+    {
+        Debug.Log("player collided");
     }
 }

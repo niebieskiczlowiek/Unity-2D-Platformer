@@ -146,7 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 0
   _currentHealth: 0
-  enemyRb: {fileID: 5561350410750482927}
+  _humanoidRb: {fileID: 5561350410750482927}
   enemyTransform: {fileID: 5559111107626191864}
 --- !u!50 &5561350410750482927
 Rigidbody2D:

@@ -754,6 +754,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6166198993889301967, guid: 5dba3226a4ae19b4d889f097baee0cef, type: 3}
   m_PrefabInstance: {fileID: 1900446413}
   m_PrefabAsset: {fileID: 0}
+--- !u!50 &760521860 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: -5805657458847095223, guid: 5dba3226a4ae19b4d889f097baee0cef, type: 3}
+  m_PrefabInstance: {fileID: 1900446413}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &797273893
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,7 +889,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5561350410750482927, guid: b74eb61c89aa4bf4ab8de28bfcdbc594, type: 3}
       propertyPath: m_BodyType
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8285770270319104264, guid: b74eb61c89aa4bf4ab8de28bfcdbc594, type: 3}
       propertyPath: m_Size.x
@@ -1266,7 +1271,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1666079657}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -1509,6 +1514,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5046276668638057538, guid: 5dba3226a4ae19b4d889f097baee0cef, type: 3}
+      propertyPath: _humanoidRb
+      value: 
+      objectReference: {fileID: 760521860}
     - target: {fileID: 5046276668638057538, guid: 5dba3226a4ae19b4d889f097baee0cef, type: 3}
       propertyPath: playerTransform
       value: 

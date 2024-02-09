@@ -45,27 +45,21 @@ public class Player : Humanoid {
         RestoreHealthFull();
     }
 
-    public void RestoreHealth(int healthAmount)
+    public void RestoreHealth(int healthAmount) { CurrentHealth += healthAmount; }
+    private void RestoreHealthFull() { CurrentHealth = MaxHealth; }
+    protected override void TakeDamage(int damageTaken) { CurrentHealth -= damageTaken; }
+    public override void HandleHit(Hit hitObject) // Called when something hits this Humanoid
     {
-        CurrentHealth += healthAmount;
-    }
-    private void RestoreHealthFull()
-    {
-        CurrentHealth = MaxHealth;
-    }
-
-    protected override void TakeDamage(int damageTaken)
-    {
-        if (!(Time.time - _lastTimeHit > _invincibilityFramesTime))
-        {
-            return;
-        }
-        CurrentHealth -= damageTaken;
+        if (!(Time.time - _lastTimeHit > _invincibilityFramesTime)) { return; }
+        
+        // Take Damage
+        int damageReceived = hitObject.GetDamageDealt();
+        TakeDamage(damageReceived);
+        
+        // Apply Knockback
+        Vector2 hitDirection = hitObject.GetHitDirection();
+        StartCoroutine(ApplyKnockBack(hitDirection));
         _lastTimeHit = Time.time;
-    }
-
-    public void checkCollision()
-    {
-        Debug.Log("player collided");
+        
     }
 }

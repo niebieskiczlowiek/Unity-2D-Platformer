@@ -7,7 +7,6 @@ public abstract class Humanoid : MonoBehaviour {
     [SerializeField] private Rigidbody2D _humanoidRb;
     protected string HumanoidName;
     
-    
     public virtual int CurrentHealth
     {
         get => _currentHealth;
@@ -35,9 +34,10 @@ public abstract class Humanoid : MonoBehaviour {
     }
     protected virtual IEnumerator ApplyKnockBack(Vector2 knockBackDirection)
     {
+        Rigidbody.AddForce(knockBackDirection * 80f, ForceMode2D.Impulse);
         yield return new WaitForSeconds(0.1f);
     }
-    public void HandleHit(Hit hitObject) // Called when something hits this Humanoid
+    public virtual void HandleHit(Hit hitObject) // Called when something hits this Humanoid
     {
         // Take Damage
         int damageReceived = hitObject.GetDamageDealt();
@@ -46,7 +46,5 @@ public abstract class Humanoid : MonoBehaviour {
         // Apply Knockback
         Vector2 hitDirection = hitObject.GetHitDirection();
         StartCoroutine(ApplyKnockBack(hitDirection));
-        
-        Debug.Log(HumanoidName + " got hit");
     }
 }

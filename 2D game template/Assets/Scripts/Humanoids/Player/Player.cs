@@ -35,7 +35,7 @@ public class Player : Humanoid {
     protected override IEnumerator ApplyKnockBack(Vector2 knockBackDirection)
     {
         playerStateManager.isKnockBacked = true;
-        Rigidbody.AddForce(knockBackDirection * 80f, ForceMode2D.Impulse);
+        Rigidbody.AddForce(knockBackDirection * 100f, ForceMode2D.Impulse);
         yield return new WaitForSeconds(0.1f);
         playerStateManager.isKnockBacked = false;
     }
@@ -60,6 +60,5 @@ public class Player : Humanoid {
         Vector2 hitDirection = hitObject.GetHitDirection();
         StartCoroutine(ApplyKnockBack(hitDirection));
         _lastTimeHit = Time.time;
-        
     }
 }

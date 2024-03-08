@@ -107,8 +107,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDrag: 1
+  m_AngularDrag: 1
   m_GravityScale: 6
   m_Material: {fileID: 6200000, guid: 393416a5ce40e594c88fa7d8b8e10c4b, type: 2}
   m_IncludeLayers:
@@ -370,19 +370,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 781211745819760738, guid: edaba9bf3f422db4eb0d504a3838b35a, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x
-      value: -1.6258419
+      value: -1.4567615
       objectReference: {fileID: 0}
     - target: {fileID: 781211745819760738, guid: edaba9bf3f422db4eb0d504a3838b35a, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].y
-      value: 0.029531121
+      value: 0.35039103
       objectReference: {fileID: 0}
     - target: {fileID: 781211745819760738, guid: edaba9bf3f422db4eb0d504a3838b35a, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
-      value: -1.6258419
+      value: -1.4697677
       objectReference: {fileID: 0}
     - target: {fileID: 781211745819760738, guid: edaba9bf3f422db4eb0d504a3838b35a, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].y
-      value: 0.029531002
+      value: -0.6797385
       objectReference: {fileID: 0}
     - target: {fileID: 781211745819760738, guid: edaba9bf3f422db4eb0d504a3838b35a, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].x
@@ -409,12 +409,16 @@ PrefabInstance:
       value: 1.5969242
       objectReference: {fileID: 0}
     - target: {fileID: 1901983171428493230, guid: edaba9bf3f422db4eb0d504a3838b35a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2984115
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901983171428493230, guid: edaba9bf3f422db4eb0d504a3838b35a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.18
+      value: 1.8057
       objectReference: {fileID: 0}
     - target: {fileID: 1901983171428493230, guid: edaba9bf3f422db4eb0d504a3838b35a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.13
+      value: -0.02
       objectReference: {fileID: 0}
     - target: {fileID: 1901983171428493230, guid: edaba9bf3f422db4eb0d504a3838b35a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -455,6 +459,10 @@ PrefabInstance:
     - target: {fileID: 8478658015642773990, guid: edaba9bf3f422db4eb0d504a3838b35a, type: 3}
       propertyPath: m_Name
       value: SlashArea
+      objectReference: {fileID: 0}
+    - target: {fileID: 8478658015642773990, guid: edaba9bf3f422db4eb0d504a3838b35a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}

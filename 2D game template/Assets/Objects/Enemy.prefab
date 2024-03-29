@@ -120,7 +120,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.033444405, y: 0.009907842}
+  m_Offset: {x: 0.090601325, y: 0.0099077225}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -131,7 +131,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.8770075, y: 6.5484753}
+  m_Size: {x: 3.771929, y: 6.5484753}
   m_EdgeRadius: 0
 --- !u!114 &-5910549876290997500
 MonoBehaviour:
@@ -148,6 +148,10 @@ MonoBehaviour:
   _maxHealth: 0
   _currentHealth: 0
   _humanoidRb: {fileID: 5561350410750482927}
+  hitCooldown:
+    cooldownTime: 0.3
+  hitStun:
+    cooldownTime: 0.3
   enemyTransform: {fileID: 5559111107626191864}
 --- !u!50 &5561350410750482927
 Rigidbody2D:
@@ -165,7 +169,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: 393416a5ce40e594c88fa7d8b8e10c4b, type: 2}
+  m_Material: {fileID: 6200000, guid: edf4b4ff820a0c149916ae7e0948bd64, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -208,7 +212,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.13338041, y: -0.3620093}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -219,5 +223,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5, y: 8}
+  m_Size: {x: 2.4468703, y: 5.370668}
   m_EdgeRadius: 0

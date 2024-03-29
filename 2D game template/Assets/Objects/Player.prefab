@@ -133,14 +133,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3efd82394a9843847b0b407f1a61d3ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  jumpPower: 30
+  _movementAcceleration: 50
+  _maxSpeed: 12
+  _linearDrag: 10
   rb: {fileID: -5805657458847095223}
   groundCheck: {fileID: 3680669407526186314}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
   playerStateManager: {fileID: 11400000, guid: affba7c53ef41ba42a10f3ebe91e357e, type: 2}
+  _jumpPower: 60
+  _airLinearDrag: 2.5
+  _fallMultiplier: 12
+  _lowJumpFallMultiplier: 2
 --- !u!61 &4514415346018351829
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -201,6 +206,10 @@ MonoBehaviour:
   unlockedAbilitiesManager: {fileID: 11400000, guid: 3167f67d1e3a2f24eb4fce2a0f5a6b85, type: 2}
   playerStateManager: {fileID: 11400000, guid: affba7c53ef41ba42a10f3ebe91e357e, type: 2}
   rb: {fileID: -5805657458847095223}
+  playerTransform: {fileID: 6166198993889301967}
+  _dashingPower: 40
+  _dashingTime: 0.2
+  _dashingCooldown: 0.5
 --- !u!96 &7711201810179219421
 TrailRenderer:
   serializedVersion: 3
@@ -317,7 +326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c17249a18879d2e4d8fc7bfa7943ca86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpPower: 26
+  jumpPower: 60
   rb: {fileID: -5805657458847095223}
   playerStateManager: {fileID: 11400000, guid: affba7c53ef41ba42a10f3ebe91e357e, type: 2}
 --- !u!114 &8443373406595091182
@@ -349,9 +358,13 @@ MonoBehaviour:
   _maxHealth: 0
   _currentHealth: 0
   _humanoidRb: {fileID: -5805657458847095223}
+  hitCooldown:
+    cooldownTime: 3
   playerStatsManager: {fileID: 11400000, guid: 3243da63975965d4d83ac7d7c75ffd4a, type: 2}
   playerStateManager: {fileID: 11400000, guid: affba7c53ef41ba42a10f3ebe91e357e, type: 2}
   playerTransform: {fileID: 6166198993889301967}
+  hitStun:
+    cooldownTime: 0.5
 --- !u!1001 &150707974812297139
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -462,7 +475,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8478658015642773990, guid: edaba9bf3f422db4eb0d504a3838b35a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}

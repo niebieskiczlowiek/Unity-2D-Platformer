@@ -4,17 +4,10 @@ using UnityEngine;
 public class Enemy : Humanoid
 {
     [SerializeField] private Transform enemyTransform;
-
-    private void Start()
-    {
-        HumanoidName = "Enemy";
-    }
+    
     private void Update()
     {
-        if (CurrentHealth == 0)
-        {
-            Die();
-        }
+        if (CurrentHealth == 0) Die();
     }
 
     private void OnTriggerStay2D(Collider2D collider)
@@ -28,7 +21,6 @@ public class Enemy : Humanoid
         Hit hitObject = new Hit(1, hitDirection);
         player.HandleHit(hitObject);
     }
-
     private Vector2 GetHitDirectionFromCollider(Collider2D collider)
     {
         return new Vector2((collider.transform.position.x - enemyTransform.position.x) * 80f, 50f);

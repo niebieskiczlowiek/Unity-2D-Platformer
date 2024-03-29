@@ -2,19 +2,21 @@ using UnityEngine;
 
 public class DoubleJumpAbility : MonoBehaviour
 {
-    public float jumpPower = 26f;
+    [SerializeField] private float jumpPower = 60f;
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private PlayerState playerStateManager;
     void Update()
     {
-        DoubleJump();
+        if (playerStateManager.isJumping && !playerStateManager.doubleJumped && Input.GetButtonDown("Jump"))
+        {
+            DoubleJump();
+        }
     }
 
     private void DoubleJump() {
-        if ( playerStateManager.isJumping && !playerStateManager.doubleJumped && Input.GetButtonDown("Jump") ) {
-            playerStateManager.doubleJumped = true;
-            rb.velocity = new Vector2(rb.velocity.x, jumpPower);
-        }
+        playerStateManager.doubleJumped = true;
+        rb.velocity = new Vector2(rb.velocity.x, 0f);
+        rb.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
     }
 }

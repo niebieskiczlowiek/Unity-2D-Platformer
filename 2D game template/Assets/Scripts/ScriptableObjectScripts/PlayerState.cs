@@ -7,8 +7,12 @@ public class PlayerState : ScriptableObject
     public bool isJumping;
     public bool doubleJumped;
     public bool isSlashing;
-    public bool isKnockBacked;
+    public bool isBeingKnockBacked;
 
-    public bool invinciblitiyOn;
+    public bool hitStunActive; 
+    // hit stun appears after the player has been hit
+    // when it's active the player cannot move
+    // it lasts while the player is being knock-backed
+    
     // all false by default
 }

@@ -6,21 +6,15 @@ public class SlashAbility : MonoBehaviour
 {
     private float slashingTime = 0.1f;
     private float slashingCooldown = 0.2f;
-    private bool slashOnCooldown = false;
+    private bool slashOnCooldown;
 
     [SerializeField] private GameObject slashBox;
     [SerializeField] private PlayerState playerStateManager;
 
-    void Update()
+    private void Update()
     {
-        if (slashOnCooldown){
-            return;
-        }
-
-        if (Input.GetButtonDown("Slash")){
-            StartCoroutine(Slash());
-        }
-        
+        if (slashOnCooldown) return;
+        if (Input.GetButtonDown("Slash")) StartCoroutine(Slash());
     }
 
     private IEnumerator Slash() {

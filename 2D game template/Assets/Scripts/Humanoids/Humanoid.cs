@@ -13,6 +13,8 @@ public abstract class Humanoid : MonoBehaviour {
     // meaning it will not receive damage or knock-backed, essentially ignoring any hits
     [SerializeField] protected Cooldown hitStun;
 
+    public Cooldown GetHitStun() { return hitStun; } 
+
     public void FixedUpdate()
     {
         if (hitStun.IsCoolingDown) Rigidbody.drag = 0;

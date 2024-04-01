@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -31,6 +32,16 @@ public class Player : Humanoid {
         if (CurrentHealth == 0) Die(); 
         playerStateManager.hitStunActive = hitStun.IsCoolingDown;
     }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Item") && Input.GetButtonDown("Interact"))
+        {
+            DroppedItem item = other.gameObject.GetComponent<DroppedItem>();
+            item.PickUp();
+        }
+    }
+
     protected override void Die()
     {
         playerTransform.position = _playerRespawnPoint;

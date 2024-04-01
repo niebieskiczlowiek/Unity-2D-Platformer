@@ -8,6 +8,7 @@ TagManager:
   - SlashSpawner
   - SlashBox
   - Enemy
+  - Item
   layers:
   - Default
   - TransparentFX

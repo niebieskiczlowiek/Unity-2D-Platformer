@@ -1,13 +1,8 @@
-﻿using System;
-using Unity.VisualScripting;
-using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DroppedItem : MonoBehaviour
 {
     [SerializeField] private Item myItem;
-    [SerializeField] private PlayerInventory inventory;
-    [SerializeField] private PlayerInventoryManager inventoryManager;
 
     public Item GetItem()
     {
@@ -16,13 +11,14 @@ public class DroppedItem : MonoBehaviour
      
     public void Start()
     {
-        inventory = PlayerInventoryManager.GetInventory();
         gameObject.tag = "Item";
     }
     
     public void PickUp()
     {
-        PlayerInventoryManager.Instance.AddToInventory(gameObject.GetComponent<DroppedItem>());
+        // Debug.Log("PICKUP " + gameObject.GetComponent<DroppedItem>().GetItem().itemName);
+        // PlayerInventoryManager.Instance.AddToInventory(gameObject.GetComponent<DroppedItem>());
+        PlayerInventoryManager.Instance.AddToInventory(myItem);
         Destroy(gameObject);
     }
 }

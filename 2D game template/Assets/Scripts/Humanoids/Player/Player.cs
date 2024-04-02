@@ -37,7 +37,7 @@ public class Player : Humanoid {
     {
         if (other.CompareTag("Item") && Input.GetButtonDown("Interact"))
         {
-            DroppedItem item = other.gameObject.GetComponent<DroppedItem>();
+            var item = other.gameObject.GetComponent<DroppedItem>();
             item.PickUp();
         }
     }

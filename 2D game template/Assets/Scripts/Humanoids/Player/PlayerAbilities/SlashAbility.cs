@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SlashAbility : MonoBehaviour
@@ -13,7 +14,7 @@ public class SlashAbility : MonoBehaviour
 
     private void Update()
     {
-        if (slashOnCooldown) return;
+        if (slashOnCooldown || PlayerInventoryManager.Instance.GetPlayerInventory().lanternSlot.IsUnityNull()) return;
         if (Input.GetButtonDown("Slash")) StartCoroutine(Slash());
     }
 

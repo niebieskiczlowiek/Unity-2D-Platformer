@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerInventory : ScriptableObject
 {
     // public Lantern slot
-    public Item lanternSlot;
+    public Lantern lanternSlot;
+    public Orb orbSlot;
     public List<Item> items;
 }

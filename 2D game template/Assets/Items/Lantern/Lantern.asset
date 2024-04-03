@@ -15,5 +15,6 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 9b13b39b4a844e34baa9ba2c5ddfcac8, type: 3}
   itemId: 0
   itemName: Lantern
-  lightEquipped: 0
+  lightEquipped: 1
   damage: 1
+  orbSlot: {fileID: 11400000, guid: 8791d191b15c36d4d8a95a8db6d498ab, type: 2}

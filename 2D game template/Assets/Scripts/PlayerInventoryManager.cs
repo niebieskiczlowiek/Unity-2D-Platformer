@@ -1,5 +1,5 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -48,8 +48,19 @@ public class PlayerInventoryManager : MonoBehaviour
                 switch (item.itemName)
                 {
                         case "Lantern":
-                                Debug.Log("Lantern was picked up");
-                                playerInventory.lanternSlot = item;
+                                playerInventory.lanternSlot = (Lantern) item;
+                                break;
+                        case "Orb":
+                                if (!playerInventory.lanternSlot.IsUnityNull())
+                                {       
+                                        playerInventory.lanternSlot.lightEquipped = true;
+                                        playerInventory.lanternSlot.orbSlot = (Orb) item;
+                                }
+                                else
+                                {
+                                        playerInventory.orbSlot = (Orb) item;
+                                }
+
                                 break;
                         default:
                                 var itemList = playerInventory.items.ToList();
@@ -57,27 +68,6 @@ public class PlayerInventoryManager : MonoBehaviour
                                 playerInventory.items = itemList;
                                 Debug.Log(item.itemName);
                                 break;
-                }
-        }
-
-        private void AssignSpecialItems()
-        {
-                foreach (var i in playerInventory.items)
-                {
-                        if (Enum.IsDefined(typeof(SpecialItems), i.itemName))
-                        {
-                                switch (i.itemName)
-                                {
-                                        case "Lantern":
-                                                Debug.Log("Lantern was picked up");
-                                                playerInventory.lanternSlot = i;
-                                                playerInventory.items.Remove(i);
-                                                break;
-                                        default:
-                                                Debug.LogError("Special item not recognized: " + i.name);
-                                                break;
-                                }
-                        }
                 }
         }
 }

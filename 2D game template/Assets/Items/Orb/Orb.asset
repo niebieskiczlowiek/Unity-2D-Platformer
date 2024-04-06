@@ -15,4 +15,4 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 32b891fb7c29aa2479f25a629ff4b436, type: 3}
   itemId: 1
   itemName: Orb
-  lightLevel: 5
+  lightLevel: 999999737

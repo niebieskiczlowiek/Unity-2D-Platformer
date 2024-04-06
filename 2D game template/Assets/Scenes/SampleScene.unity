@@ -993,12 +993,20 @@ PrefabInstance:
       value: Orb
       objectReference: {fileID: 0}
     - target: {fileID: 4581683711730417469, guid: 431e5d96ab04cbc4587f10c411159b63, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.35877088
+      objectReference: {fileID: 0}
+    - target: {fileID: 4581683711730417469, guid: 431e5d96ab04cbc4587f10c411159b63, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.32383922
+      objectReference: {fileID: 0}
+    - target: {fileID: 4581683711730417469, guid: 431e5d96ab04cbc4587f10c411159b63, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -238.71126
+      value: -239.7436
       objectReference: {fileID: 0}
     - target: {fileID: 4581683711730417469, guid: 431e5d96ab04cbc4587f10c411159b63, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 37.69212
+      value: 36.617
       objectReference: {fileID: 0}
     - target: {fileID: 4581683711730417469, guid: 431e5d96ab04cbc4587f10c411159b63, type: 3}
       propertyPath: m_LocalPosition.z

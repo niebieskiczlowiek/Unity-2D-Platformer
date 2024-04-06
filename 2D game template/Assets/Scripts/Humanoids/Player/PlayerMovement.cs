@@ -11,7 +11,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _maxSpeed = 12f;
     [SerializeField] private float _linearDrag = 10f;
     private float _horizontalMovement;
-    private float _verticalMovement;
     private bool _isFacingRight = true;
 
     private bool _changingDirection => (rb.velocity.x > 0f && _horizontalMovement < 0f) ||
@@ -38,7 +37,6 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         _horizontalMovement = GetInput().x;
-        _verticalMovement = GetInput().y;
         
         // if (DashChecker() || KnockBackChecker()) return;
         if (DashChecker() || playerStateManager.hitStunActive) return;
@@ -121,5 +119,10 @@ public class PlayerMovement : MonoBehaviour
             localScale.x *= -1f;
             transform.localScale = localScale;
         }
+    }
+
+    public bool IsFacingRight()
+    {
+        return _isFacingRight;
     }
 }

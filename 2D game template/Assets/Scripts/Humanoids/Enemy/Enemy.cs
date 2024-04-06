@@ -7,7 +7,7 @@ public class Enemy : Humanoid
     
     private void Update()
     {
-        if (CurrentHealth == 0) Die();
+        if (CurrentHealth <= 0) Die();
     }
 
     private void OnTriggerStay2D(Collider2D collider)

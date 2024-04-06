@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: -920691886222191695}
   - component: {fileID: 8443373406595091182}
   - component: {fileID: 5046276668638057538}
+  - component: {fileID: -2198701224567180252}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -360,11 +361,27 @@ MonoBehaviour:
   _humanoidRb: {fileID: -5805657458847095223}
   hitCooldown:
     cooldownTime: 3
+  hitStun:
+    cooldownTime: 0.5
   playerStatsManager: {fileID: 11400000, guid: 3243da63975965d4d83ac7d7c75ffd4a, type: 2}
   playerStateManager: {fileID: 11400000, guid: affba7c53ef41ba42a10f3ebe91e357e, type: 2}
   playerTransform: {fileID: 6166198993889301967}
-  hitStun:
-    cooldownTime: 0.5
+--- !u!114 &-2198701224567180252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4653931420159446836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98e9eaaf4d8a4f30b06eaba0d583e95c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  cost: 2
+  spellObject: {fileID: 2538609182734113828, guid: a726c444a6e15734fab716fe4d51b75f, type: 3}
+  transform: {fileID: 6166198993889301967}
 --- !u!1001 &150707974812297139
 PrefabInstance:
   m_ObjectHideFlags: 0
